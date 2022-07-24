@@ -1,5 +1,5 @@
 import AppRouter from 'routers/AppRouter';
-import './App.scss';
+import 'scss/index.scss';
 
 function App() {
   return (

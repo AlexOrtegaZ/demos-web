@@ -1,38 +1,37 @@
-html, body, #root {
-  width: 100%;
-  height: 100%;
+@use 'base';
 
-  box-sizing: border-box;
+@use 'layout';
 
-  overflow: hidden;
-}
+@use 'components';
 
-*,
-*::after,
-*::before {
-  box-sizing: inherit;
-}
 
 .app-container {
   width: 100%;
-  height: 100%;
+  height: max-content;
+  min-height: 100%;
 
   padding: 20px;;
 
   display: flex;
   align-items: flex-start;
   background-color: #edf2f4;
-  background-image: url("./assets/paint-1.jpeg");
+  background-image: url("../assets/paint-1.jpeg");
   background-position: center;
-  overflow: hidden;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  position: relative;
+
   .sidebar-container {
     background-color: #2b2d42;
     width: 60px;
     height: 100%;
   }
-  .content-container {
-    height: 100%;
 
+  .content-container {
+    height: max-content;
+    min-height: 94vh;
     padding: 24px;
     padding-bottom: 48px;
     width: 60%;
@@ -54,13 +53,22 @@ html, body, #root {
     }
   }
   .person-with-phone {
-    position: absolute;
-    right: 0;
-    bottom: -40px;
-    height: 60%;
+    height: 60vh;
     animation: balance 20s ease-in-out 110ms 1 alternate;
     animation-iteration-count: infinite;
   }
+
+  .person-with-phone-wrapper {
+    width: max-content;
+    height: max-content;
+
+    position: fixed;
+    right: 0;
+    bottom: -40px;
+
+    overflow: hidden;
+  }
+
   .stores-badges {
     display: grid;
     grid-template-columns: 200px 162px;
@@ -129,10 +137,11 @@ html, body, #root {
   display: flex;
   align-items: center;
 
-  position: absolute;
+  //position: absolute;
+  position: fixed;
   z-index: 1;
-  top: 10px;
-  left: 10px;
+  top: 25px;
+  left: 25px;
 
   cursor: pointer;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);

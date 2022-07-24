@@ -30,12 +30,14 @@ const Layout = ({ children }) => {
         {children}
 
       </div>
-
-      <img
-        className="person-with-phone"
-        src={personWithPhone1}
-        alt="person-with-phone"
-      ></img>
+      
+      <div className="person-with-phone-wrapper">
+        <img
+          className="person-with-phone"
+          src={personWithPhone1}
+          alt="person-with-phone"
+        ></img>
+      </div>
     </div>
   );
 };

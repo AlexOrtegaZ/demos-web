@@ -1,0 +1,13 @@
+$dark-gray: #37352f;
+
+.repositories-page {
+  color: $dark-gray;
+  font-family: sans-serif;
+  padding: 0 10px;
+
+  &__title {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 2;
+  }
+}
